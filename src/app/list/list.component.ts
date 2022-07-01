@@ -43,12 +43,19 @@ export class ListComponent implements OnInit {
     this.heroesService.selectedCharacter = memberTeam;
     if(this.heroesTeam.length > 5){
       alert("You have already 6 member in the team");
-      return;
     }else if(this.heroesTeam.includes(memberTeam)){
-      alert("Choose other Heroe, the heroe selected is already in the team")
+      alert("Choose other Heroe, the heroe selected is already in the team");
     }else{
       this.heroesTeam.push(memberTeam);
     }
   }
+
+  deleteHeroTeam(memberTeam: Character){
+    let memberToRemove = this.heroesTeam.indexOf(memberTeam);
+    if(memberToRemove !== -1){
+      this.heroesTeam.splice(memberToRemove, 1);
+    }
+  }
+
 
 }

@@ -1,9 +1,10 @@
 
-<div class="container">
-
-
+<div class="container mb-5" *ngFor="let members of heroesTeam">
+   <img src="{{members.thumbnail.path}}.{{members.thumbnail.extension}}"  width="40">
 </div>
-<div class="container">
+
+
+<div class="container mt-5">
   <div class="form-group">
     <input  type="text" class="forms-control" placeholder="Search by Name" [(ngModel)]="filterCharacter" name="filterCharacter">
   </div>
@@ -16,6 +17,7 @@
         <th class="fw-bold col-md-3" scope="col">Picture</th>
         <th class="fw-bold col-md-1" scope="col">Know more</th>
         <th class="fw-bold col-md-1" scope="col">Add to the team</th>
+        <th class="fw-bold col-md-1" scope="col">Delete from the team</th>
       </tr>
     </thead>
     <tbody class="bodyTable">
@@ -23,9 +25,10 @@
         <td>{{heroe.id}}</td>
         <td>{{heroe.name}}</td>
         <td>{{heroe.description}}</td>
-        <td><img src="{{heroe.thumbnail.path}}.{{heroe.thumbnail.extension}}" width="100" ></td>
+        <td><img src="{{heroe.thumbnail.path}}.{{heroe.thumbnail.extension}}" width="100"></td>
         <td><button type="button" class="btn btn-info" [routerLink]="['/detail']" (click)="selectedHeroID(heroe)">Know more!</button></td>
         <td><button type="button" class="btn btn-info" (click)="addHeroTeam(heroe)">Select</button></td>
+        <td><button type="button" class="btn btn-info" (click)="deleteHeroTeam(heroe)">Delete</button></td>
       </tr>
     </tbody>
   </table>
