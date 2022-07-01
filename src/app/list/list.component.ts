@@ -52,7 +52,9 @@ export class ListComponent implements OnInit {
 
   deleteHeroTeam(memberTeam: Character){
     let memberToRemove = this.heroesTeam.indexOf(memberTeam);
-    if(memberToRemove !== -1){
+    if(memberToRemove == -1){
+      alert("Is not possible to remove this member from the team, because was not selected before")
+    }else{
       this.heroesTeam.splice(memberToRemove, 1);
     }
   }
