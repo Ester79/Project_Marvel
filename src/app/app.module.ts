@@ -17,6 +17,7 @@ import { MainComponent } from './main/main.component';
 import { ListComponent } from './list/list.component';
 import { DetailsComponent } from './details/details.component';
 import { TeamComponent } from './team/team.component';
+import { FilterPipe } from './pipes/filter.pipe';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { TeamComponent } from './team/team.component';
     MainComponent,
     ListComponent,
     DetailsComponent,
-    TeamComponent
+    TeamComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,

@@ -3,6 +3,7 @@ import {Router} from '@angular/router';
 import { AppRoutingModule } from '../app-routing.module';
 import { HeroesService } from '../services/heroes.service';
 import { Character, Response } from '../interfaces/characters.interface';
+import { FilterPipe } from '../pipes/filter.pipe';
 
 @Component({
   selector: 'app-list',
@@ -12,6 +13,8 @@ import { Character, Response } from '../interfaces/characters.interface';
 export class ListComponent implements OnInit {
 
   listCharacters: Character[] = [];
+
+  filterCharacter = '';
 
   constructor(private router: Router,
     private routingModule: AppRoutingModule,
