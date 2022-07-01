@@ -1,5 +1,8 @@
 
+<div class="container">
 
+
+</div>
 <div class="container">
   <div class="form-group">
     <input  type="text" class="forms-control" placeholder="Search by Name" [(ngModel)]="filterCharacter" name="filterCharacter">
@@ -22,7 +25,7 @@
         <td>{{heroe.description}}</td>
         <td><img src="{{heroe.thumbnail.path}}.{{heroe.thumbnail.extension}}" width="100" ></td>
         <td><button type="button" class="btn btn-info" [routerLink]="['/detail']" (click)="selectedHeroID(heroe)">Know more!</button></td>
-        <td><button type="button" class="btn btn-info">Select</button></td>
+        <td><button type="button" class="btn btn-info" (click)="addHeroTeam(heroe)">Select</button></td>
       </tr>
     </tbody>
   </table>
