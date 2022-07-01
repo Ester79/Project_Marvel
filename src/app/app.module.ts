@@ -7,6 +7,7 @@ import { HttpClientModule } from '@angular/common/http';
 // Routing
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 // Services
 import { HeroesService } from './services/heroes.service';
@@ -29,7 +30,9 @@ import { TeamComponent } from './team/team.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [HeroesService],
   bootstrap: [AppComponent]
