@@ -1,1 +1,75 @@
-<p>details works!</p>
+
+<div class="container">
+  <h1>{{detailsHero.name}}</h1>
+  <h4>{{detailsHero.description}}</h4>
+  <img src="{{detailsHero.thumbnail.path}}.{{detailsHero.thumbnail.extension}}" width="200">
+
+</div>
+<div class="container mt-5">
+  <div class="btn-group" role="group">
+    <button type="button" class="btn btn-outline-primary" (click)="displayComicsTable()">SHOW COMICS</button>
+    <button type="button" class="btn btn-outline-primary" (click)="displayStoriesTable()">SHOW STORIES</button>
+    <button type="button" class="btn btn-outline-primary" (click)="displaySeriesTable()">SHOW SERIES</button>
+    <button class="btn btn-info" type="button" [routerLink]="['/list']">Go back to List</button>
+  </div>
+</div>
+
+<!--TABLE COMICS-->
+<div class="container" [hidden]="hidewComics">
+  <div class="form-group mt-5">
+    <input  type="text" class="forms-control" placeholder="Search" [(ngModel)]="filterComic" name="filterComic">
+  </div>
+  <table class="table mt-1 align-middle table-hover table-borderless">
+    <thead>
+      <tr>
+        <th class="fw-bold col-md-1" scope="col">Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let comic of comicsHero | filter: filterComic">
+        <td>{{comic.name}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!--TABLE STORIES-->
+<div class="container" [hidden]="hideStories">
+  <div class="form-group mt-5">
+    <input  type="text" class="forms-control" placeholder="Search" [(ngModel)]="filterStory" name="filterStory">
+  </div>
+  <table class="table mt-1 align-middle table-hover table-borderless">
+    <thead>
+      <tr>
+        <th class="fw-bold col-md-1" scope="col">Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let story of storiesHero | filter: filterStory">
+        <td>{{story.name}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!--TABLE SERIES-->
+<div class="container" [hidden]="hideSeries">
+  <div class="form-group mt-5">
+    <input  type="text" class="forms-control" placeholder="Search" [(ngModel)]="filterSerie" name="filterSerie">
+  </div>
+  <table class="table mt-1 align-middle table-hover table-borderless">
+    <thead>
+      <tr>
+        <th class="fw-bold col-md-1" scope="col">Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let serie of seriesHero | series: filterSerie">
+        <td>{{serie.name}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+

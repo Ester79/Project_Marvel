@@ -18,6 +18,9 @@ import { ListComponent } from './list/list.component';
 import { DetailsComponent } from './details/details.component';
 import { TeamComponent } from './team/team.component';
 import { FilterPipe } from './pipes/filter.pipe';
+import { ComicsPipe } from './pipes/comics.pipe';
+import { StoriesPipe } from './pipes/stories.pipe';
+import { SeriesPipe } from './pipes/series.pipe';
 
 
 @NgModule({
@@ -27,7 +30,10 @@ import { FilterPipe } from './pipes/filter.pipe';
     ListComponent,
     DetailsComponent,
     TeamComponent,
-    FilterPipe
+    FilterPipe,
+    ComicsPipe,
+    StoriesPipe,
+    SeriesPipe
   ],
   imports: [
     BrowserModule,
