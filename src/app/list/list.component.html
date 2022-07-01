@@ -21,7 +21,7 @@
         <td>{{heroe.name}}</td>
         <td>{{heroe.description}}</td>
         <td><img src="{{heroe.thumbnail.path}}.{{heroe.thumbnail.extension}}" width="100" ></td>
-        <td><button type="button" class="btn btn-info" [routerLink]="['/detail']">Know more!</button></td>
+        <td><button type="button" class="btn btn-info" [routerLink]="['/detail']" (click)="selectedHeroID(heroe)">Know more!</button></td>
         <td><button type="button" class="btn btn-info">Select</button></td>
       </tr>
     </tbody>

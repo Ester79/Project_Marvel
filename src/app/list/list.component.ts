@@ -26,10 +26,15 @@ export class ListComponent implements OnInit {
 
 
   loadListCharacters(): void {
-    this.heroesService.getCharacters().subscribe(data_list_characters => {this.listCharacters = data_list_characters.data.results;
-      console.log("listado heroes");
+    this.heroesService.getCharacters()
+    .subscribe(data_list_characters => {this.listCharacters = data_list_characters.data.results;
+      console.log("list heroes");
       console.log(this.listCharacters);
-    } )
+    });
+  }
+
+  selectedHeroID(hero: Character){
+    this.heroesService.selectedCharacter = hero;
   }
 
 }

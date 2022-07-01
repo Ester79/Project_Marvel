@@ -11,17 +11,36 @@ export class HeroesService {
 
   url: string = 'https://gateway.marvel.com:443';
   apiKey: string = '2e46d8d87ef8af7725291e79e808afc6';
+  endPointHeroes: string = '/v1/public/characters';
 
-  endPoint_List_All_Heroes: string = '/v1/public/characters';
+  _selectedCharacter: any = null; // character ID by default initialize with null
+  listCharacters: Character[] = [];
 
 
   constructor(private httpClient: HttpClient) { }
 
 
+  // Get Heroe ID selected from table
+  get selectedCharacter(){
+    return this._selectedCharacter;
+  }
+
+  set selectedCharacter(value: Character){
+    this._selectedCharacter = value;
+  }
+
+
   // Get lis all heroes
   getCharacters(): Observable<Response>{
-    return this.httpClient.get<Response>(`${this.url}${this.endPoint_List_All_Heroes}?apikey=${this.apiKey}`);
+    return this.httpClient.get<Response>(`${this.url}${this.endPointHeroes}?apikey=${this.apiKey}`);
   }
+
+  getDetailsByID(): Observable<Response>{
+    return this.httpClient.get<Response>(`${this.url}${this.endPointHeroes}/${this._selectedCharacter?.id}?apikey=${this.apiKey}`);
+  }
+
+
+
 
 
 

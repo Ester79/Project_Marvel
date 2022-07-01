@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 import { AppRoutingModule } from '../app-routing.module';
+import { Character } from '../interfaces/characters.interface';
+import { HeroesService } from '../services/heroes.service';
 
 @Component({
   selector: 'app-details',
@@ -9,9 +11,19 @@ import { AppRoutingModule } from '../app-routing.module';
 })
 export class DetailsComponent implements OnInit {
 
-  constructor(private router: Router, private routingModule: AppRoutingModule) { }
+  detailsHero: any;
+
+  constructor(private router: Router,
+    private routingModule: AppRoutingModule,
+    private heroesService: HeroesService) { }
 
   ngOnInit(): void {
+    this.loadDetailsHero();
   }
 
+  loadDetailsHero(): void {
+    this.detailsHero = this.heroesService.selectedCharacter;
+    console.log("detail hero");
+    console.log(this.detailsHero);
+  };
 }
