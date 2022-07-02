@@ -38,6 +38,23 @@ h3{
   min-height: 100px;
 }
 
+.marvelTeam {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  height: 40px;
+}
 
+.formatButton{
+  background-color:black;
+  font-weight: bold;
+  border: 2px solid red;
 
+}
 
+.formatButton:hover{
+  background-color: red;
+  color: black;
+  font-weight: bold;
+  box-shadow: 0 0 50px blue, 0 0 10px blue, 0 0 80px blue;
+}

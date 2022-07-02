@@ -1,10 +1,3 @@
-
-body{
-
-}
-
-
-
 .bodyTable {
   text-align: center;
   font-size: 11px;
@@ -15,12 +8,70 @@ body{
   display: flex;
   justify-content: center;
   margin-top: 10px;
-  height: 50px;
+  height: 40px;
 }
 
 .paginator {
   display: flex;
   justify-content: flex-end;
+  color: black;
+  font-weight:bold;
 }
+
+
+.formatButton{
+  border: 2px solid blue;
+  text-align: center;
+  cursor: pointer;
+  background-color: black;
+  font-weight: bold;
+}
+
+.formatButton:hover{
+  background-color: red;
+  color: black;
+  box-shadow: 0 0 50px blue, 0 0 10px blue, 0 0 80px blue;
+}
+
+th{
+  text-align: center;
+}
+
+td button {
+  background-color: azure;
+  color:black;
+  font-weight:bold;
+}
+
+.btn1:hover{
+  color: white;
+  background-color: blue;
+  font-weight: bold;
+  box-shadow: 0 0 50px goldenrod, 0 0 10px yellowgreen, 0 0 80px white;
+}
+
+.btn2:hover{
+  color: white;
+  background-color: yellowgreen;
+  font-weight: bold;
+  box-shadow: 0 0 50px goldenrod, 0 0 10px yellowgreen, 0 0 80px white;
+}
+
+.btn3:hover{
+  color: white;
+  background-color: red;
+  font-weight: bold;
+  box-shadow: 0 0 50px goldenrod, 0 0 10px yellowgreen, 0 0 80px white;
+}
+
+img{
+  box-shadow: 0 0 50px blue, 0 0 10px white, 0 0 40px white;
+  border-radius: 5px;
+}
+
+
+
+
+
 
 
