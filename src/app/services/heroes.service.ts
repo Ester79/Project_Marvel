@@ -15,6 +15,7 @@ export class HeroesService {
 
   _selectedCharacter: any = null; // character ID by default initialize with null
   listCharacters: Character[] = [];
+  _team: Character[] = [];
 
 
   constructor(private httpClient: HttpClient) { }
@@ -29,10 +30,19 @@ export class HeroesService {
     this._selectedCharacter = value;
   }
 
+    // Get Team
+    get team(){
+      return this._team;
+    }
+
+    set team(value: Character[]){
+      this._team = value;
+    }
+
 
   // Get lis all heroes
   getCharacters(): Observable<Response>{
-    return this.httpClient.get<Response>(`${this.url}${this.endPointHeroes}?apikey=${this.apiKey}`);
+    return this.httpClient.get<Response>(`${this.url}${this.endPointHeroes}?apikey=${this.apiKey}&limit=100`);
   }
 
   getDetailsByID(): Observable<Response>{

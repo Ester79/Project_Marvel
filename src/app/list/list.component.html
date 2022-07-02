@@ -1,6 +1,6 @@
 
-<div class="container mb-5" *ngFor="let members of heroesTeam">
-   <img src="{{members.thumbnail.path}}.{{members.thumbnail.extension}}"  width="40">
+<div class="marvelTeam flex mb-5" >
+   <img *ngFor="let members of getTeam()" src="{{members.thumbnail.path}}.{{members.thumbnail.extension}}"  height="60" >
 </div>
 
 
@@ -8,7 +8,7 @@
   <div class="form-group">
     <input  type="text" class="forms-control" placeholder="Search by Name" [(ngModel)]="filterCharacter" name="filterCharacter">
   </div>
-  <table class="table mt-5 align-middle table-hover table-responsive">
+  <table class="table mt-5 align-middle table-hover table-responsive" height="100">
     <thead>
       <tr>
         <th class="fw-bold col-md-1" scope="col">Heroe ID</th>
@@ -21,11 +21,11 @@
       </tr>
     </thead>
     <tbody class="bodyTable">
-      <tr *ngFor="let heroe of listCharacters | filter: filterCharacter">
+      <tr *ngFor="let heroe of listCharacters | filter: filterCharacter | paginate: {itemsPerPage: 5, currentPage: pages}">
         <td>{{heroe.id}}</td>
         <td>{{heroe.name}}</td>
         <td>{{heroe.description}}</td>
-        <td><img src="{{heroe.thumbnail.path}}.{{heroe.thumbnail.extension}}" width="100"></td>
+        <td><img src="{{heroe.thumbnail.path}}.{{heroe.thumbnail.extension}}" height="100"></td>
         <td><button type="button" class="btn btn-info" [routerLink]="['/detail']" (click)="selectedHeroID(heroe)">Know more!</button></td>
         <td><button type="button" class="btn btn-info" (click)="addHeroTeam(heroe)">Select</button></td>
         <td><button type="button" class="btn btn-info" (click)="deleteHeroTeam(heroe)">Delete</button></td>
@@ -33,5 +33,9 @@
     </tbody>
   </table>
 </div>
+<div class="container mt-5">
+  <pagination-controls (pageChange)="pages = $event" class="paginator"></pagination-controls>
+</div>
+
 
 

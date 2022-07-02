@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 // Protocol http
 import { HttpClientModule } from '@angular/common/http';
@@ -7,7 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 // Routing
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 // Services
 import { HeroesService } from './services/heroes.service';
@@ -40,7 +42,8 @@ import { SeriesPipe } from './pipes/series.pipe';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxPaginationModule
   ],
   providers: [HeroesService],
   bootstrap: [AppComponent]

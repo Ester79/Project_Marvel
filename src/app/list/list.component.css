@@ -2,3 +2,18 @@
   text-align: center;
   font-size: 11px;
 }
+
+
+.marvelTeam {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  height: 50px;
+}
+
+.paginator {
+  display: flex;
+  justify-content: flex-end;
+}
+
+
