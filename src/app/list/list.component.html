@@ -2,15 +2,15 @@
 <div class="marvelTeam flex mb-4" >
    <img *ngFor="let members of getTeam()" src="{{members.thumbnail.path}}.{{members.thumbnail.extension}}"  height="60">
 </div>
-<div class="marvelTeam flex mb-3" >
+<div class="marvelTeam flex mb-2" >
   <button type="button" class="btn btn-primary formatButton"  [routerLink]="['/team']">VIEW THE TEAM</button>
 </div>
-
+  <h1 class="counterHeroes">Heroes: {{countedTeam()}}</h1>
 <div class="container mt-2">
   <div class="form-group">
     <input  type="text" class="forms-control shadow  bg-body rounded" placeholder="Search by Name" [(ngModel)]="filterCharacter" name="filterCharacter">
   </div>
-  <table class="table mt-5 align-middle table-hover table-dark table-responsive" height="100">
+  <table class="table mt-3 align-middle table-hover table-dark table-responsive" height="100">
     <thead>
       <tr>
         <th class="fw-bold col-md-1" scope="col">HEROE ID</th>

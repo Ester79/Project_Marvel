@@ -19,6 +19,8 @@ export class ListComponent implements OnInit {
 
   pages: number = 1;
 
+  counterHeroesAdded: number = 0;
+
 
 
   constructor(private router: Router,
@@ -44,7 +46,6 @@ export class ListComponent implements OnInit {
 
   addHeroTeam(memberTeam: Character){
     this.heroesService.selectedCharacter = memberTeam;
-
     if(this.heroesService._team.length > 5){
       Swal.fire('Team limited to 6 superheroes!', 'You have already 6 member in the team', 'warning')
     }else if(this.heroesService.isMemberInTheTeam(memberTeam) >= 0){
@@ -67,6 +68,10 @@ export class ListComponent implements OnInit {
 
   getTeam(){
     return this.heroesService._team;
+  }
+
+  countedTeam(){
+    return this.heroesService._team.length;
   }
 
 
