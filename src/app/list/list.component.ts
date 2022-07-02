@@ -44,17 +44,19 @@ export class ListComponent implements OnInit {
 
   addHeroTeam(memberTeam: Character){
     this.heroesService.selectedCharacter = memberTeam;
+
     if(this.heroesService._team.length > 5){
       Swal.fire('Team limited to 6 superheroes!', 'You have already 6 member in the team', 'warning')
-    }else if(this.heroesService._team.includes(memberTeam)){
-      Swal.fire('Twins ' + memberTeam.name + ' in the team?', 'Choose other heroe, ' + memberTeam.name + ' is already in the team', 'question')
+    }else if(this.heroesService.isMemberInTheTeam(memberTeam) >= 0){
+      Swal.fire('Twins ' + memberTeam.name + ' in the team?', 'Choose another heroe, ' + memberTeam.name + ' is already in the team', 'question')
     }else{
       this.heroesService._team.push(memberTeam);
     }
   }
 
   deleteHeroTeam(memberTeam: Character){
-    let memberToRemove = this.heroesService._team.indexOf(memberTeam);
+    //let memberToRemove = this.heroesService.team.indexOf(memberTeam);
+    let memberToRemove = this.heroesService.isMemberInTheTeam(memberTeam);
     if(memberToRemove == -1){
       Swal.fire('Error! ' + memberTeam.name + ' was not selected before!', 'Maybe you wanted to remove other!!', 'error')
     }else{

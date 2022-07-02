@@ -49,6 +49,16 @@ export class HeroesService {
     return this.httpClient.get<Response>(`${this.url}${this.endPointHeroes}/${this._selectedCharacter?.id}?apikey=${this.apiKey}`);
   }
 
+  // Check if member is added to the team
+  isMemberInTheTeam(member: Character){
+    for(let i = 0; i < this._team.length; i++){
+      if(this._team[i].id === member.id){
+        return i;
+      }
+    }
+    return -1;
+  }
+
 
 
 
