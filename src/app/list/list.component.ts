@@ -4,6 +4,7 @@ import { AppRoutingModule } from '../app-routing.module';
 import { HeroesService } from '../services/heroes.service';
 import { Character, Response } from '../interfaces/characters.interface';
 import { FilterPipe } from '../pipes/filter.pipe';
+import Swal from 'sweetalert2'
 
 @Component({
   selector: 'app-list',
@@ -44,9 +45,9 @@ export class ListComponent implements OnInit {
   addHeroTeam(memberTeam: Character){
     this.heroesService.selectedCharacter = memberTeam;
     if(this.heroesService._team.length > 5){
-      alert("You have already 6 member in the team");
+      Swal.fire('Team limited to 6 superheroes!', 'You have already 6 member in the team', 'warning')
     }else if(this.heroesService._team.includes(memberTeam)){
-      alert("Choose other Heroe, the heroe selected is already in the team");
+      Swal.fire('Twins ' + memberTeam.name + ' in the team?', 'Choose other heroe, ' + memberTeam.name + ' is already in the team', 'question')
     }else{
       this.heroesService._team.push(memberTeam);
     }
@@ -55,9 +56,10 @@ export class ListComponent implements OnInit {
   deleteHeroTeam(memberTeam: Character){
     let memberToRemove = this.heroesService._team.indexOf(memberTeam);
     if(memberToRemove == -1){
-      alert("Is not possible to remove this member from the team, because was not selected before")
+      Swal.fire('Error! ' + memberTeam.name + ' was not selected before!', 'Maybe you wanted to remove other!!', 'error')
     }else{
       this.heroesService._team.splice(memberToRemove, 1);
+      Swal.fire('Removed! ' + memberTeam.name, ' ..Oh! maybe for another time you will choose him!!', 'success')
     }
   }
 

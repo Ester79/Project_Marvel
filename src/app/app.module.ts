@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxPaginationModule } from 'ngx-pagination';
 
+
 // Protocol http
 import { HttpClientModule } from '@angular/common/http';
 
@@ -43,7 +44,8 @@ import { SeriesPipe } from './pipes/series.pipe';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+
   ],
   providers: [HeroesService],
   bootstrap: [AppComponent]
