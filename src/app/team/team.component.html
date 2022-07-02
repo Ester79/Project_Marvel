@@ -1,1 +1,17 @@
-<p>team works!</p>
+<div class="container">
+  <div class="backgroundTitle">
+    <p class="tittle">MARVEL TEAM</p>
+  </div>
+</div>
+<div class="container" >
+  <div class="card card-body singleCards" *ngFor="let heroe of finalTeam">
+    <h3 style="color:blue">{{heroe.name}}</h3>
+    <p class="card-text"><b>Nº Comics:</b> {{heroe.comics.returned}}</p>
+    <p class="card-text"><b>Nº Series:</b> {{heroe.series.returned}}</p>
+    <p class="card-text"><b>Nº Stories:</b> {{heroe.stories.returned}}</p>
+    <img src="{{heroe.thumbnail.path}}.{{heroe.thumbnail.extension}}" width="100%">
+    <p class="card-text">{{heroe.description}}</p>
+  </div>
+</div>
+
+

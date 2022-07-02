@@ -1,0 +1,43 @@
+.container {
+  display: flex;
+}
+
+.tittle{
+  font-size: 70px;
+  font-weight: bold;
+  -webkit-text-stroke: 3px black;
+  color: blue;
+  font-style:italic;
+}
+
+.tittle:hover{
+  color: red;
+}
+
+
+.backgroundTitle{
+  background-color: red;
+  width: 100%;
+  text-align: center;
+  border: 3px solid white;
+  height: 130px;
+  box-shadow: 0 0 300px black, 0 0 200px red, 0 0 300px blue;
+}
+
+.backgroundTitle:hover {
+  background-color: blue;
+  box-shadow: 0 0 300px black, 0 0 200px black, 0 0 300px blue;
+}
+
+.singleCards{
+  display: flex-wrap;
+  width: 30%;
+}
+
+h3{
+  min-height: 100px;
+}
+
+
+
+

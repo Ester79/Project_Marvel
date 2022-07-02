@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 import { AppRoutingModule } from '../app-routing.module';
+import { Character } from '../interfaces/characters.interface';
+import { HeroesService } from '../services/heroes.service';
 
 @Component({
   selector: 'app-team',
@@ -9,9 +11,18 @@ import { AppRoutingModule } from '../app-routing.module';
 })
 export class TeamComponent implements OnInit {
 
-  constructor(private router: Router, private routingModule: AppRoutingModule) { }
+  finalTeam: Character[] = [];
+
+  constructor(private router: Router,
+    private routingModule: AppRoutingModule,
+    private heroesService: HeroesService) { }
 
   ngOnInit(): void {
+    this.showTeam();
+  }
+
+  showTeam(){
+    this.finalTeam = this.heroesService._team;
   }
 
 }
