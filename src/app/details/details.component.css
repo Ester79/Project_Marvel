@@ -1,0 +1,26 @@
+button{
+  background-color: blue;
+  font-weight: bold;
+  border: 3px solid black;
+  border-radius: 15px;
+  font-size: 20px;
+  margin-left: 10px;
+  color: white;
+  -webkit-text-stroke: 1px black;
+}
+
+.btnGoList{
+  background-color: black;
+}
+
+button:hover{
+  background-color: red;
+  color: white;
+  font-weight: bold;
+  box-shadow: 0 0 50px blue, 0 0 10px blue, 0 0 80px blue;
+  border: 3px solid blue;
+  -webkit-text-stroke: 1px black;
+
+}
+
+

@@ -2,10 +2,11 @@
   <div class="backgroundTitle">
     <p class="tittle">MARVEL TEAM</p>
   </div>
+
+    <button type="button" class="btn btn-primary formatButton"  [routerLink]="['/list']">GO TO THE LIST</button>
+
 </div>
-<div class="marvelTeam flex mb-2" >
-  <button type="button" class="btn btn-primary formatButton"  [routerLink]="['/list']">GO TO THE LIST</button>
-</div>
+
 <div class="container" >
   <div class="card card-body singleCards" *ngFor="let heroe of finalTeam">
     <h3 style="color:blue">{{heroe.name}}</h3>

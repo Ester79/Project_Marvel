@@ -33,6 +33,7 @@
   box-shadow: 0 0 50px blue, 0 0 10px blue, 0 0 80px blue;
 }
 
+
 th{
   text-align: center;
 }
@@ -73,6 +74,11 @@ img{
   text-align: center;
   font-size: 50px;
   font-weight: bold;
+}
+
+.textButton{
+  display: flex;
+  justify-content: space-between;
 }
 
 

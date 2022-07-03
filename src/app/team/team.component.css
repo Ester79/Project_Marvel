@@ -46,15 +46,23 @@ h3{
 }
 
 .formatButton{
-  background-color:black;
+  background-color:blue;
   font-weight: bold;
-  border: 2px solid red;
+  border: 3px solid black;
+  border-radius: 15px;
+  font-size: 20px;
+  margin-left: 10px;
+  color: red;
+  -webkit-text-stroke: 1px black;
 
 }
 
 .formatButton:hover{
   background-color: red;
-  color: black;
   font-weight: bold;
   box-shadow: 0 0 50px blue, 0 0 10px blue, 0 0 80px blue;
+  border: 3px solid blue;
+  -webkit-text-stroke: 1px black;
+  color:blue;
+
 }
