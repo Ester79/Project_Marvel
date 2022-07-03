@@ -39,10 +39,6 @@ export class DetailsComponent implements OnInit {
     this.comicsHero = this.heroesService.selectedCharacter.comics.items;
     this.storiesHero = this.heroesService.selectedCharacter.stories.items;
     this.seriesHero = this.heroesService.selectedCharacter.series.items;
-    console.log("detail hero");
-    console.log(this.detailsHero);
-    console.log("comic hero");
-    console.log(this.comicsHero);
   };
 
   displayComicsTable(){
